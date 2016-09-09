@@ -37,8 +37,10 @@ COPY nginx.conf /etc/nginx/conf.d/
 # </Nginx>
 
 # <uWSGI>
+ENV UWSGI_VERSION 2.0.13.1
+
 # Install uWSGI
-RUN pip install uwsgi
+RUN pip install uwsgi==${UWSGI_VERSION}
 
 # Copy the base uWSGI ini file to enable default dynamic uwsgi process number
 COPY uwsgi.ini /etc/uwsgi/
