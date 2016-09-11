@@ -1,0 +1,7 @@
+version: '2'
+services:
+  web:
+    build: .
+    image: kulapard/python-uwsgi-nginx:2.7
+    ports:
+     - "8080:80"
