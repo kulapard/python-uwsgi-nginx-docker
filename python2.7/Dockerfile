@@ -14,9 +14,8 @@ RUN set -ex \
     && BUILD_DEPS='build-essential python-dev' \
     && apt-get install -y $BUILD_DEPS --no-install-recommends \
     && pip install --no-cache-dir \
-        uwsgi==2.0.13.1 \
-#    && apt-get autoremove -y $BUILD_DEPS \
-    && apt-get purge -y --auto-remove $BUILD_DEPS \
+        uwsgi \
+    && apt-get autoremove -y $BUILD_DEPS \
     && rm -rf /usr/src/python ~/.cache \
     && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* \
     && find /usr/local -depth \
